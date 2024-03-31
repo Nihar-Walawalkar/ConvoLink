@@ -4,7 +4,7 @@
         android:name="android.hardware.camera"
         android:required="false" />
     <application
-        android:label="Agora"
+        android:label="Zoom"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
