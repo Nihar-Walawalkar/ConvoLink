@@ -4,6 +4,7 @@ import 'package:untitled/models/home_model.dart';
 import 'package:untitled/chat/views/SignIn_page.dart';
 import 'package:untitled/chat/views/SignUp_page.dart';
 import 'package:untitled/chat/views/join_meeting_page.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -108,13 +109,9 @@ class _HomePageState extends State<HomePage> {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          fullscreenDialog: true,
-                          builder: (_) => JoinMeetingPage()));
-                  // Navigator.pushReplacement(
-                  //     context, MaterialPageRoute(builder: (_) => RootApp()));
+                  Get.to(() => JoinMeetingPage(),
+                    transition: Transition.zoom,
+                  );
                 },
                 child: Container(
                   width: size.width * 0.75,
@@ -134,12 +131,10 @@ class _HomePageState extends State<HomePage> {
                 children: [
 
                   GestureDetector(
-                    onTap: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              fullscreenDialog: true,
-                              builder: (_) => SignUp()));
+                    onTap: () {
+                      Get.to(() => SignUp(),
+                        transition: Transition.zoom,
+                      );
                     },
                     child: Text(
                       "Sign Up",
@@ -151,12 +146,10 @@ class _HomePageState extends State<HomePage> {
                   ),
 
                   GestureDetector(
-                    onTap: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              fullscreenDialog: true,
-                              builder: (_) => SignIn()));
+                    onTap: () {
+                      Get.to(() => SignIn(),
+                        transition: Transition.zoom,
+                      );
                     },
                     child: Text(
                       "Sign In",

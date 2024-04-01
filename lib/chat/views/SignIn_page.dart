@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:untitled/chat/views/home_page.dart';
-import 'package:untitled/chat/views/chat_screen.dart';
 import 'package:get/get.dart';
+import 'package:untitled/chat/views/join_meeting_page.dart';
+import 'package:untitled/login_api.dart';
 
 class SignIn extends StatelessWidget {
   @override
@@ -18,8 +19,9 @@ class SignIn extends StatelessWidget {
             children: [
               GestureDetector(
                   onTap: () {
-                    Get.to(() => HomePage(),
-                      transition: Transition.zoom,
+                    Get.to(
+                      () => HomePage(),
+                      transition: Transition.fade,
                     );
                   },
                   child: Padding(
@@ -88,11 +90,19 @@ class SignIn extends StatelessWidget {
               height: 30,
             ),
             GestureDetector(
-              onTap: () {
-                Get.to(
-                  () => ChatScreen(),
-                  transition: Transition.zoom,
-                );
+              onTap: () async {
+                var user = await LoginAPI.login();
+                if (user != null) {
+                  Get.to(
+                    () => JoinMeetingPage(),
+                    transition: Transition.zoom,
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("Logged in as ${user.email}"),
+                    ),
+                  );
+                }
               },
               child: Container(
                 width: size.width * 0.75,
@@ -162,7 +172,20 @@ class SignIn extends StatelessWidget {
               ),
               trailing: IconButton(
                 icon: Icon(Icons.arrow_forward_ios),
-                onPressed: () {},
+                onPressed: () async {
+                  var user = await LoginAPI.login();
+                  if (user != null) {
+                    Get.to(
+                      () => JoinMeetingPage(),
+                      transition: Transition.zoom,
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Logged in as ${user.email}"),
+                      ),
+                    );
+                  }
+                },
               ),
             ),
             ListTile(
@@ -182,6 +205,39 @@ class SignIn extends StatelessWidget {
               trailing: IconButton(
                 icon: Icon(Icons.arrow_forward_ios),
                 onPressed: () {},
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            GestureDetector(
+              onTap: () async {
+                LoginAPI.signOut();
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text("Logged out successfully"),
+                  ),
+                );
+                Get.to(
+                  () => Navigator.pop(context),
+                  transition: Transition.fade,
+                );
+              },
+              child: Container(
+                width: size.width * 0.75,
+                height: 50,
+                decoration: BoxDecoration(
+                    color: Color(0xffe4e4ed),
+                    borderRadius: BorderRadius.circular(15)),
+                child: Center(
+                  child: Text(
+                    "Sign Out",
+                    style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.grey[600]),
+                  ),
+                ),
               ),
             ),
           ],

@@ -23,7 +23,7 @@ class _SignUpState extends State<SignUp> {
             onTap: () {
               Get.to(
                 () => HomePage(),
-                transition: Transition.zoom,
+                transition: Transition.fade,
               );
             },
             child: Padding(
