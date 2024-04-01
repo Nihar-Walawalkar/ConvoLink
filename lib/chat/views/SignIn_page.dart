@@ -116,7 +116,7 @@ class SignIn extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.w600,
-                        color: Colors.grey[600]),
+                        color: Colors.blue),
                   ),
                 ),
               ),
@@ -235,7 +235,7 @@ class SignIn extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.w600,
-                        color: Colors.grey[600]),
+                        color: Colors.blue),
                   ),
                 ),
               ),
