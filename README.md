@@ -1,3 +1,3 @@
 # Flutter Zoom Clone
 
-A new Flutter project.
+### Flutter Video Conferencing App using Firebase & Zegocloud API
