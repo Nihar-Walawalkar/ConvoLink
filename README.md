@@ -1,4 +1,45 @@
-### Flutter Video Conferencing App using Firebase & Zegocloud API
+# ConvoLink: Android Video Conference Application
+
+## Overview
+**ConvoLink** is a cutting-edge Android application designed to provide seamless and interactive video conferencing capabilities. Built using **Flutter** and powered by the **ZEGOCLOUD API**, ConvoLink offers a comprehensive suite of features to enable high-quality video communication. With user authentication powered by Firebase and real-time call tracking, the application is tailored to meet both personal and professional needs.
+
+---
+
+## Features
+### Core Features
+- **High-Quality Video Conferencing**: Smooth, lag-free video calls with participants.
+- **User Authentication**: Secure login and registration using Firebase Authentication.
+- **Real-Time Call Tracking**: Monitor ongoing calls and maintain session logs.
+- **Data Analytics**: Analyze call data for insights and performance tracking.
+
+### Advanced Features
+- **Screen Sharing**: Share your device's screen with participants during the call.
+- **Integrated Chat**: Real-time text messaging alongside video calls for better collaboration.
+- **Collaborative Blackboard**: A virtual whiteboard to brainstorm, share ideas, and illustrate concepts during calls.
+
+---
+
+## Technologies Used
+- **Frontend**: Flutter
+- **Video Conference API**: ZEGOCLOUD API
+- **Backend**: Firebase Authentication & Firestore
+- **Real-Time Features**: Firebase Realtime Database
+- **Analytics**: Firebase Analytics
+- **Programming Language**: Dart
+
+---
+
+## Installation and Setup
+### Prerequisites
+- Flutter installed on your system.
+- Android Studio or Visual Studio Code configured for Flutter development.
+- ZEGOCLOUD API account for API key.
+
+### Steps to Install and Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Nihar-Walawalkar/ConvoLink.git
+   cd ConvoLink
 
 <br>
 
